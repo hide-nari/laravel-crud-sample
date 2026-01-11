@@ -73,4 +73,3 @@ test('person delete pattern', function () {
 
     $page->assertSee('people');
 });
-
