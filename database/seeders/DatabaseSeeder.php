@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Person::create([
-            'name' => 'taro',
-            'age' => 15,
+            'name' => 'jiro',
+            'age' => 20,
         ]);
         Person::factory(3)->create();
     }
