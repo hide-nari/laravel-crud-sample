@@ -3,11 +3,17 @@
 namespace App\Livewire;
 
 use App\Models\Person;
+use Livewire\Attributes\Computed;
 use Livewire\Component;
 
 class PeopleIndex extends Component
 {
-//    public $people;
+
+    #[Computed]
+    public function people()
+    {
+        return Person::all();
+    }
 
     public function delete($personId): void
     {
@@ -17,6 +23,6 @@ class PeopleIndex extends Component
 
     public function render()
     {
-        return view('livewire.people-index', ['people' => Person::all()]);
+        return view('livewire.people-index');
     }
 }

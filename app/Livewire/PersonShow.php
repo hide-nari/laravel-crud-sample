@@ -8,10 +8,20 @@ use Livewire\Component;
 
 class PersonShow extends Component
 {
+    public Person $person;
+    public ?int $id = null;
     #[Validate('required')]
-    public string $name = 'taro';
+    public ?string $name;
     #[Validate('required')]
-    public int $age = 15;
+    public ?int $age;
+    public ?string $method = 'update';
+
+    public function mount(Person $person): void
+    {
+        $person->id ? $this->id = $person->id : $this->method = 'add';
+        $this->name = $person->name;
+        $this->age = $person->age;
+    }
 
     public function add(): void
     {
@@ -19,6 +29,16 @@ class PersonShow extends Component
         Person::create([
             'name' => $this->pull('name'),
             'age'  => $this->pull('age'),
+        ]);
+        redirect()->route('people.index');
+    }
+
+    public function update()
+    {
+        $this->validate();
+        Person::find($this->id)->update([
+            'name' => $this->name,
+            'age'  => $this->age,
         ]);
         redirect()->route('people.index');
     }
