@@ -15,6 +15,7 @@ When updating, execute the following command.
 ```
 art test
  ./vendor/bin/pest --type-coverage
+herd coverage ./vendor/bin/pest --coverage
 ```
 
 ## License

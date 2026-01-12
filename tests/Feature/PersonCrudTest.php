@@ -67,7 +67,7 @@ test('person delete pattern', function () {
 
     $page = visit('/people');
 
-    $page->click('Update');
+    $page->click('Delete');
 
     // TODO confirm form
 

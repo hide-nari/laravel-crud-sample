@@ -8,7 +8,7 @@
         <flux:button href="{{ route('person.show',$person) }}" variant="primary">
             Update
         </flux:button>
-        <flux:button wire:confirm="Delete OK?" wire:click="delete({{ $person->id }})" variant="danger">
+        <flux:button wire:click="delete({{ $person->id }})" variant="danger">
             Delete
         </flux:button>
         <br>
