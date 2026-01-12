@@ -1,5 +1,5 @@
 <div>
-    {{ 'people' }}
+    {{ 'people123' }}
     <flux:button icon="plus" href="{{ route('person.show') }}"/>
     <br>
     <br>

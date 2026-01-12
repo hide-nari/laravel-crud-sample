@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Person;
+use Illuminate\View\View;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -33,7 +34,7 @@ class PersonShow extends Component
         redirect()->route('people.index');
     }
 
-    public function update()
+    public function update(): void
     {
         $this->validate();
         Person::find($this->id)->update([
@@ -43,7 +44,7 @@ class PersonShow extends Component
         redirect()->route('people.index');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.person-show');
     }
